@@ -1,0 +1,14 @@
+
+//단일쿼리 조회
+
+public with sharing class SOQLSearchSingleQueries {
+    public static List<Contact> searchForContacts(Id inputSearch) {
+
+      // //0032w00000yTR43AAG
+        List<Contact> contacts = [SELECT FirstName, LastName FROM Contact WHERE Id = :inputSearch];
+        System.debug(contacts);
+        return contacts;
+
+    }
+}
+
