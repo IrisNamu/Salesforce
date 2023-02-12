@@ -1,0 +1,14 @@
+
+public with sharing class SOQLSearchMultipleQueries {
+    public static List<Contact> searchForContacts() {
+        List<Contact> Contacts = [SELECT Id From Contact];
+
+        System.debug('총' + Contacts.size());
+
+        for (Contact c : Contacts) {
+            System.debug(c);
+        }
+
+        return Contacts;
+    }
+}
